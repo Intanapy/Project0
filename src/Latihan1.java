@@ -34,14 +34,35 @@ public class Latihan1 {
         System.out.println();
     }
     static double perhitungan_sederhana() {
+        int angka1;
+        int angka2;
+        char operator;
 
         System.out.println("Perhitungan Sederhana");
+        System.out.print("Input angka ke-1: ");
+        angka1 = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Input operator (+, -, /, *, %): ");
+        operator = scanner.nextLine().charAt(0);
+
+        System.out.print("Input angka ke-2: ");
+        angka2 = scanner.nextInt();
+
+        switch (operator) {
+            case '+' -> System.out.println("Hasil: " + (angka1 + angka2));
+            case '-' -> System.out.println("Hasil: " + (angka1 - angka2));
+            case '/' -> System.out.println("Hasil: " + (angka1 / angka2));
+            case '*' -> System.out.println("Hasil: " + (angka1 * angka2));
+            case '%' -> System.out.println("Hasil: " + (angka1 % angka2));
+            default -> System.out.println("MASUKAN OPERATOR YANG BENAR!");
+        }
 
         return 0;
     }
     static double konversi_suhu() {
 
-        System.out.println("Konvesi Suhu / Jarak");
+        System.out.println("Konversi Suhu / Jarak");
 
         return 0;
     }
