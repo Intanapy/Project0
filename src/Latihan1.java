@@ -106,8 +106,58 @@ public class Latihan1 {
         return 0;
     }
     static double konversi_suhu() {
+        int pilih;
+        int satuan;
+        double suhu;
 
         System.out.println("Konversi Suhu / Jarak");
+
+        System.out.println("1. Konversi Suhu");
+        System.out.println("2. Konversi Jarak");
+        System.out.print("Input pilihan anda: ");
+        pilih = scanner.nextInt();
+
+        if(pilih == 1) {
+            System.out.println("KONVERSI SUHU");
+            System.out.println("1. Celcius -> Fahrenheit");
+            System.out.println("2. Celcius -> Reamur");
+            System.out.println("3. Celcius -> Kelvin");
+            System.out.println("4. Fahrenheit -> Celcius");
+            System.out.println("5. Fahrenheit -> Reamur");
+            System.out.println("6. Fahrenheit -> Kelvin");
+            System.out.println("7. Reamur -> Fahrenheit");
+            System.out.println("8. Reamur -> Kelvin");
+            System.out.println("9. Reamur -> Celcius");
+            System.out.println("10. Kelvin -> Fahrenheit");
+            System.out.println("11. Kelvin -> Celcius");
+            System.out.println("12. Kelvin -> Reamur");
+
+            System.out.print("Pilih Konversi Satuan: ");
+            satuan = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.print("Input Suhu: ");
+            suhu = scanner.nextDouble();
+
+            switch (satuan) {
+                case 1 -> System.out.println("Hasil Konversi: " + ((9/5 * suhu) + 32));
+                case 2 -> System.out.println("Hasil Konversi: " + (4/5 * suhu));
+                case 3 -> System.out.println("Hasil Konversi: " + (suhu + 273));
+                case 4 -> System.out.println("Hasil Konversi: " + (5/9 * (suhu - 32)));
+                case 5 -> System.out.println("Hasil Konversi: " + (4/9 * (suhu - 32)));
+                case 6 -> System.out.println("Hasil Konversi: " + (5/9 * (suhu - 32) + 273));
+                case 7 -> System.out.println("Hasil Konversi: " + ((9/4 * suhu) + 32));
+                case 8 -> System.out.println("Hasil Konversi: " + (5/4 * suhu + 273));
+                case 9 -> System.out.println("Hasil Konversi: " + (5/4 * suhu));
+                case 10 -> System.out.println("Hasil Konversi: " + ((9/5 * (suhu - 273)) + 32));
+                case 11 -> System.out.println("Hasil Konversi: " + (suhu - 273));
+                case 12 -> System.out.println("Hasil Konversi: " + (4/5 * (suhu - 273)));
+                default -> System.out.println("MASUKAN ANGKA YANG SESUAI!");
+            };
+        }
+        else if(pilih == 2) {
+            System.out.println("Konversi Jarak");
+        }
 
         return 0;
     }
