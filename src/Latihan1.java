@@ -14,7 +14,7 @@ public class Latihan1 {
         System.out.println("Di sini anda dapat melakukan hal berikut: ");
         System.out.println("1. Perhitungan Sederhana");
         System.out.println("2. Menghitung Pythagoras");
-        System.out.println("3. Konvesi Suhu / Jarak");
+        System.out.println("3. Konvesi Suhu");
         System.out.println("4. Menghitung Bunga");
         System.out.println("5. Simulasi Cicilan");
         System.out.println();
@@ -106,64 +106,76 @@ public class Latihan1 {
         return 0;
     }
     static double konversi_suhu() {
-        int pilih;
         int satuan;
         double suhu;
 
-        System.out.println("Konversi Suhu / Jarak");
+        System.out.println("KONVERSI SUHU");
 
-        System.out.println("1. Konversi Suhu");
-        System.out.println("2. Konversi Jarak");
-        System.out.print("Input pilihan anda: ");
-        pilih = scanner.nextInt();
+        System.out.println("1. Celcius -> Fahrenheit");
+        System.out.println("2. Celcius -> Reamur");
+        System.out.println("3. Celcius -> Kelvin");
+        System.out.println("4. Fahrenheit -> Celcius");
+        System.out.println("5. Fahrenheit -> Reamur");
+        System.out.println("6. Fahrenheit -> Kelvin");
+        System.out.println("7. Reamur -> Fahrenheit");
+        System.out.println("8. Reamur -> Kelvin");
+        System.out.println("9. Reamur -> Celcius");
+        System.out.println("10. Kelvin -> Fahrenheit");
+        System.out.println("11. Kelvin -> Celcius");
+        System.out.println("12. Kelvin -> Reamur");
 
-        if(pilih == 1) {
-            System.out.println("KONVERSI SUHU");
-            System.out.println("1. Celcius -> Fahrenheit");
-            System.out.println("2. Celcius -> Reamur");
-            System.out.println("3. Celcius -> Kelvin");
-            System.out.println("4. Fahrenheit -> Celcius");
-            System.out.println("5. Fahrenheit -> Reamur");
-            System.out.println("6. Fahrenheit -> Kelvin");
-            System.out.println("7. Reamur -> Fahrenheit");
-            System.out.println("8. Reamur -> Kelvin");
-            System.out.println("9. Reamur -> Celcius");
-            System.out.println("10. Kelvin -> Fahrenheit");
-            System.out.println("11. Kelvin -> Celcius");
-            System.out.println("12. Kelvin -> Reamur");
+        System.out.print("Pilih Konversi Satuan: ");
+        satuan = scanner.nextInt();
+        scanner.nextLine();
 
-            System.out.print("Pilih Konversi Satuan: ");
-            satuan = scanner.nextInt();
-            scanner.nextLine();
+        System.out.print("Input Suhu: ");
+        suhu = scanner.nextDouble();
 
-            System.out.print("Input Suhu: ");
-            suhu = scanner.nextDouble();
-
-            switch (satuan) {
-                case 1 -> System.out.println("Hasil Konversi: " + ((9/5 * suhu) + 32));
-                case 2 -> System.out.println("Hasil Konversi: " + (4/5 * suhu));
-                case 3 -> System.out.println("Hasil Konversi: " + (suhu + 273));
-                case 4 -> System.out.println("Hasil Konversi: " + (5/9 * (suhu - 32)));
-                case 5 -> System.out.println("Hasil Konversi: " + (4/9 * (suhu - 32)));
-                case 6 -> System.out.println("Hasil Konversi: " + (5/9 * (suhu - 32) + 273));
-                case 7 -> System.out.println("Hasil Konversi: " + ((9/4 * suhu) + 32));
-                case 8 -> System.out.println("Hasil Konversi: " + (5/4 * suhu + 273));
-                case 9 -> System.out.println("Hasil Konversi: " + (5/4 * suhu));
-                case 10 -> System.out.println("Hasil Konversi: " + ((9/5 * (suhu - 273)) + 32));
-                case 11 -> System.out.println("Hasil Konversi: " + (suhu - 273));
-                case 12 -> System.out.println("Hasil Konversi: " + (4/5 * (suhu - 273)));
-                default -> System.out.println("MASUKAN ANGKA YANG SESUAI!");
-            };
-        }
-        else if(pilih == 2) {
-            System.out.println("Konversi Jarak");
-        }
+        switch (satuan) {
+            case 1 -> System.out.println(suhu + "C = " + ((9.0/5 * suhu) + 32) + "F");
+            case 2 -> System.out.println(suhu + "C = " + (4.0/5 * suhu) + "R");
+            case 3 -> System.out.println(suhu + "C = " + (suhu + 273) + "K");
+            case 4 -> System.out.println(suhu + "F = " + (5.0/9 * (suhu - 32)) + "C");
+            case 5 -> System.out.println(suhu + "F = " + (4.0/9 * (suhu - 32)) + "R");
+            case 6 -> System.out.println(suhu + "F = " + (5.0/9 * (suhu - 32) + 273) + "K");
+            case 7 -> System.out.println(suhu + "R = " + ((9.0/4 * suhu) + 32) + "R");
+            case 8 -> System.out.println(suhu + "R = " + (5.0/4 * suhu + 273) + "K");
+            case 9 -> System.out.println(suhu + "R = " + (5.0/4 * suhu) + "C");
+            case 10 -> System.out.println(suhu + "K = " + ((9.0/5 * (suhu - 273)) + 32) + "F");
+            case 11 -> System.out.println(suhu + "K = " + (suhu - 273) + "C");
+            case 12 -> System.out.println(suhu + "K = " + (4.0/5 * (suhu - 273)) + "R");
+            default -> System.out.println("MASUKAN SATUAN YANG SESUAI!");
+        };
 
         return 0;
     }
     static double menghitung_bunga() {
+        double setoran_awal;
+        double persentase_bunga;
+        double bunga;
+        int durasi;
+        double total;
+        double hasil_akhir = 0;
 
         System.out.println("Menghitung Bunga");
+
+        System.out.print("Input setoran awal anda: ");
+        setoran_awal = scanner.nextInt();
+
+        System.out.print("Input persentase bunga tahunan: ");
+        persentase_bunga =scanner.nextDouble() / 100;
+
+        System.out.print("Input durasi anda menyimpan uang: ");
+        durasi = scanner.nextInt();
+
+        hasil_akhir = setoran_awal;
+        int i = 1;
+        while (i <= durasi) {
+            hasil_akhir = hasil_akhir + (hasil_akhir * persentase_bunga);
+            i++;
+        }
+
+        System.out.println(hasil_akhir);
 
         return 0;
     }
