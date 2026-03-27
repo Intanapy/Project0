@@ -169,19 +169,42 @@ public class Latihan1 {
         durasi = scanner.nextInt();
 
         hasil_akhir = setoran_awal;
-        int i = 1;
-        while (i <= durasi) {
+
+        for (int i = 1; i <= durasi; i++){
             hasil_akhir = hasil_akhir + (hasil_akhir * persentase_bunga);
-            i++;
         }
 
-        System.out.println(hasil_akhir);
+        System.out.println("Hasil tabungan anda selama " + durasi + " tahun adalah: " + hasil_akhir);
 
         return 0;
     }
     static double simulasi_cicilan() {
+        int pinjaman;
+        double bunga;
+        double persentase;
+        int durasi;
+        double total;
+        double cicilan;
 
         System.out.println("Simulasi Cicilan");
+
+        System.out.print("Input jumlah pinjaman: ");
+        pinjaman = scanner.nextInt();
+
+        System.out.print("Input durasi pinjaman (bulan): ");
+        durasi = scanner.nextInt();
+
+        System.out.print("Input persentase bunga pertahun: ");
+        persentase = scanner.nextDouble() / 100;
+
+        bunga = pinjaman * persentase;
+        total = pinjaman + bunga;
+        cicilan = total / durasi;
+
+        System.out.println("Jumlah pinjaman: " + pinjaman);
+        System.out.printf("Persentase bunga: %.0f\n", bunga);
+        System.out.printf("Total pinjaman: %.0f\n", total);
+        System.out.printf("Cicilan perbulan: %.0f\n", cicilan);
 
         return 0;
     }
